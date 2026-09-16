@@ -1,8 +1,16 @@
 # ROTEIRO – Desafio Opportunity 2026
 
-Status: rascunho para validação. Nada abaixo foi executado ainda.
+Status: rascunho de 12/09/2026. **Parcialmente superado — ver aviso abaixo.**
 Fonte: `contexto.md` (regulamento oficial + orientações do Opportunity).
-Data de referência: 12/09/2026.
+
+> ⚠️ **Atualização de 16/09/2026.** O grupo adotou o método da Marcellus Investment Managers
+> para a Etapa 1. A Fase B descrita na seção 3 deste arquivo foi substituída por:
+> - `Marcellus.md` — o método e sua tradução para o checklist I do Opportunity
+> - `etapa1_setor/ROTEIRO_ETAPA1.md` (v2) — roteiro executável de 48h, dados a fornecer e as 7 bifurcações argumentativas
+> - `etapa1_setor/PRE_RELATORIO.md` — esqueleto do relatório com os argumentos em forma curta
+> - `empresa/fontes.md` — fontes já verificadas, com data de acesso
+>
+> Restam ~2,5 dias para a Etapa 1. As Fases C e D deste arquivo continuam válidas.
 
 ---
 

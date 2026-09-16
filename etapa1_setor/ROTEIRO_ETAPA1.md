@@ -1,197 +1,218 @@
-# ROTEIRO DETALHADO – ETAPA 1: ANÁLISE SETORIAL (NETFLIX)
+# ROTEIRO – ETAPA 1: ANÁLISE SETORIAL (NETFLIX), MÉTODO MARCELLUS
 
-Entrega: PDF de até 5 páginas, A4, Arial/Times 12, até 18/09/2026 23h59.
-Pergunta que o texto responde: **"Quais são os principais aspectos do setor em que a Netflix opera?"**
-Critérios: técnica + coerência, concisão, persuasão, originalidade. Toda afirmação com fonte.
-
-Regra de ouro das orientações: não é "check the checklist". Cada item do checklist I vira um
-argumento com número, e todos os argumentos convergem para uma síntese que já aponta para a
-Etapa 2 (a tese). O leitor deve terminar a página 5 sabendo o que o setor implica para a Netflix.
+Versão 2 — reescrita em 16/09/2026. A versão 1 (12/09) está no histórico do git.
+Método adotado: ver `Marcellus.md`. Entrega: PDF ≤5 páginas, A4, Arial/Times 12, **18/09/2026 23h59**.
 
 ---
 
-## 1. Decisões de enquadramento (tomar no D0, antes de pesquisar)
+## ⚠️ 0. Duas coisas mudaram desde a versão 1
 
-### 1.1 Mercado relevante: proposta de definição em camadas
+**(a) O prazo. Restam ~2,5 dias, não 6.** O cronograma antigo previa D4 = hoje com a pesquisa
+toda pronta; as pastas `pesquisa/` e `dados/` estão vazias. O plano abaixo é de 48h, não de 6 dias.
+Consequência prática: a lista de dados que peço a vocês caiu de 12 itens para **4**, e eu assumo
+o resto. Não dá para esperar acesso de biblioteca ou relatório de corretora chegar a tempo.
 
-O checklist pede "qual é o mercado relevante". Para a Netflix isso é a decisão mais importante
-do trabalho, e é onde dá para ser original. Proposta:
+**(b) A premissa central da versão 1 estava factualmente errada.** O roteiro antigo dizia
+"Netflix anuncia compra da Warner Bros. (dez/2025)" e tratava a Netflix como consolidadora.
+O que de fato aconteceu (verificado hoje, fontes em `empresa/fontes.md`):
 
-| Camada | Definição | Por que usar |
+| Data | Fato |
+|---|---|
+| 05/12/2025 | Conselho da WBD aceita proposta da Netflix (~US$ 83 bi) |
+| 08/12/2025 | Paramount Skydance (David Ellison) lança oferta hostil, US$ 30/ação, tudo em dinheiro |
+| 22/01/2026 | DOJ emite *second request* sobre Netflix–WBD; Netflix converte oferta para US$ 27,75 all-cash |
+| fev/2026 | DOJ investiga se a Netflix exerce poder anticompetitivo **sobre criadores e produtores** (Clayton §7 / Sherman §2) |
+| 27/02/2026 | **Netflix desiste e embolsa multa de rescisão de US$ 2,8 bi** |
+| 23/04/2026 | Acionistas da WBD aprovam a Paramount (US$ 31/ação); taxa de rescisão regulatória de US$ 7 bi |
+| set–dez/2026 | Fechamento esperado; *ticking fee* de US$ 0,25/ação por trimestre a partir de 30/09/2026 |
+
+Isso não é um detalhe: **inverte o argumento**. A Netflix não é a consolidadora do setor — ela
+tentou consolidar, foi barrada pelo preço e pelo antitruste, e o nº 2 do setor está sendo montado
+por outro. E o motivo alegado pelo DOJ (poder de compra sobre criadores) é a confissão regulatória
+de que o fosso da Netflix é real. Esse é o melhor material original que temos.
+
+---
+
+## 1. A tese setorial que vamos defender (hipótese-guia)
+
+> **O setor de vídeo tem dois andares, e só um deles dá lucro.**
+> No andar da atenção, o vídeo premium perde participação para plataformas abertas: o streaming
+> chegou a 48,5% do tempo de TV nos EUA (jun/26), mas a fatia da própria Netflix encolheu no
+> período, e o YouTube é hoje o maior distribuidor de tempo de TV do país. No andar do lucro,
+> ocorre o inverso: quinze anos de guerra por assinantes deixaram **um único player com margem
+> operacional estruturalmente positiva** (31,5% projetada para 2026), enquanto os rivais
+> consolidam por necessidade, os estúdios viraram fornecedores e as ligas e criadores capturam
+> valor crescente. A pergunta da Etapa 1 não é "o setor cresce?" — é **"esse pool de lucro
+> concentrado dura quanto tempo, e o que o quebraria?"**
+
+Se os dados derrubarem essa hipótese, ela muda. Mas ter tese desde já é o que permite escrever
+em 48h, e é o que a Marcellus faz: a carta começa com a conclusão e o resto é evidência.
+
+---
+
+## 2. Os dados que EU busco sozinho (não gastem tempo com isso)
+
+Já confirmei acesso e já puxei parte hoje. Tudo com fonte e data de acesso registradas.
+
+- **SEC EDGAR**: 10-K/10-Q/8-K/proxies da Netflix, Disney, WBD, Paramount Skydance, Comcast, Roku, Alphabet.
+- **Cartas trimestrais da Netflix** (ir.netflix.net) — consigo converter PDF em texto e extrair tabelas.
+  Já extraí a do 2T26 (16/07/2026) integralmente.
+- **Nielsen The Gauge** (releases públicos), notícias setoriais (Variety, Deadline, Reuters, CNBC, Bloomberg, Fortune).
+- **Série histórica de preços** da Netflix por país e plano via Wayback Machine + centro de ajuda.
+- **Deflatores**: CPI (FRED/BLS) e IPCA (IBGE/BCB).
+- **Regulação**: textos da AVMSD, European Audiovisual Observatory, Ancine, Anatel, tramitação no Congresso.
+- **Releases públicos** de Ampere, Omdia, Digital TV Research, Antenna, JustWatch, MUSO, Deloitte Digital Media Trends.
+- **Todo o cálculo e os gráficos**: HHI, série de preço deflacionada, tabela de margem por elo da cadeia,
+  ROCE, razão caixa de conteúdo / amortização, participação no tempo de TV.
+
+## 3. Os dados que preciso de VOCÊS — só 4 itens
+
+Prioridade absoluta, hoje (16/09) até o fim do dia. O resto eu abandono conscientemente.
+
+| # | O quê | Por que é insubstituível | Prazo |
+|---|---|---|---|
+| **1** | **Decisão sobre as bifurcações da seção 5** (as 7 escolhas argumentativas) | É julgamento de vocês, não dado. Sem isso eu escrevo um relatório em cima do muro, que é o que mais reprova. | hoje, 16/09 |
+| **2** | **Qualquer relatório sell-side ou setorial pago** que vocês consigam em horas (conta em corretora, professor, portal CAPES, biblioteca digital): Morgan Stanley / JPM / Goldman / MoffettNathanson sobre streaming; Ampere ou Omdia completos | É a única coisa que eu genuinamente não alcanço. Uma iniciação de cobertura vale por dez notícias e dá o *consenso* contra o qual vamos divergir. Se não vier até amanhã cedo, eu construo o consenso a partir de manchetes e sigo. | 17/09 manhã |
+| **3** | **Trechos das cartas da Marcellus** que vocês analisaram, colados em `Marcellus.md` seção 6 | Para eu imitar o método real e não a minha memória dele. | hoje, 16/09 |
+| **4** | **Nome do grupo, integrantes e idioma** (PT ou EN) | Vai na capa/cabeçalho e consome página. Recomendo **PT**: a banca é brasileira e a Etapa 4 é no Rio. | hoje, 16/09 |
+
+**O que deliberadamente NÃO vamos buscar** (e por que está tudo bem): Kantar IBOPE, Comscore,
+Antenna completo, Bloomberg/Economatica, PNAD TIC detalhada, Euromonitor. São ótimos para a Etapa 2.
+Na Etapa 1, com 5 páginas, cada um desses acrescentaria uma linha e custaria meio dia.
+
+**Se vocês tiverem tempo sobrando**, o item de maior retorno é montar a planilha de **histórico de
+preços da Netflix no Brasil por plano com datas** (o site brasileiro e as notícias locais são mais
+fáceis de garimpar em português). Eu cruzo com o IPCA e viro o gráfico de pricing power.
+
+---
+
+## 4. Estrutura do relatório (5 páginas) — arquitetura Marcellus
+
+| # | Seção | Pág. | Argumento em uma frase | Gráfico |
+|---|---|---|---|---|
+| — | **Abertura** | 0,3 | Um número que contradiz o consenso: o streaming venceu a TV linear, mas a Netflix não venceu o streaming — e ainda assim é a única que lucra. | — |
+| 1 | **Onde está o pool de lucro** | 1,0 | Mapeamos a cadeia por margem, não por receita: o lucro do vídeo premium global está concentrado em um player só. | G1 |
+| 2 | **Por que ele fica lá: a barreira não-óbvia** | 1,1 | Teste de Greenwald (participação estável + ROCE>WACC persistente). A barreira não é catálogo nem tecnologia: é custo fixo de conteúdo diluído por uma base global que ninguém mais tem, e o poder de compra sobre criadores que decorre disso. | G2 + G3 |
+| 3 | **O lucro do setor é caixa?** | 0,7 | **Seção original.** Neste setor, lucro contábil é escolha de política de amortização de conteúdo. Testamos quem converte. | G4 |
+| 4 | **O que quebraria isso: as duas frentes** | 1,2 | (a) teto regulatório à consolidação, revelado pelo episódio WBD; (b) erosão por baixo, na fronteira da atenção (YouTube, criadores, engajamento quase estável). | G5 |
+| 5 | **Regulação e fornecedores** | 0,4 | Aqui a regulação não limita preço — limita consolidação e transfere valor para ligas, sindicatos e cotas locais. | — |
+| 6 | **Síntese: quanto tempo dura** | 0,3 | Base rate da mídia + as 3 perguntas que a Etapa 2 tem de responder. | — |
+
+Referências em notas de rodapé compactas dentro do limite (anexos não são avaliados).
+**Máximo 5 gráficos**, meia coluna cada. Texto obrigatoriamente fonte 12.
+
+### Os gráficos (fecho a lista quando os dados estiverem prontos)
+- **G1 – Margem operacional por elo da cadeia, 2019–2026E**: Netflix vs. DTC de Disney/WBD/Paramount/Peacock vs. estúdios vs. Roku (CTV) vs. Alphabet/YouTube. *Prova de onde fica o lucro.*
+- **G2 – Gasto em conteúdo (US$ bi) ÷ base de assinantes**: custo de conteúdo por assinante por player. *Prova a economia de escala como barreira.*
+- **G3 – Preço do plano padrão deflacionado**, EUA e Brasil, 2011–2026. *Prova quantitativa de pricing power — é exatamente o exemplo que o Opportunity cita nas orientações.*
+- **G4 – Caixa gasto em conteúdo ÷ amortização de conteúdo**, Netflix vs. pares, com impairments dos rivais marcados. *A seção de qualidade contábil.*
+- **G5 – Nielsen Gauge**: tempo de TV nos EUA por distribuidor, 2021–2026, YouTube vs. Netflix vs. broadcast vs. cabo. *A fronteira da atenção.*
+
+---
+
+## 5. As 7 bifurcações argumentativas — decisão de vocês
+
+Cada uma tem duas leituras defensáveis com os mesmos dados. **Escolher é obrigatório**: um relatório
+que fica nos dois lados perde em "persuasão" e "coerência", dois dos quatro critérios do edital.
+Marquei minha recomendação, mas a decisão é do grupo.
+
+### Bifurcação 1 — Qual é o mercado relevante?
+- **(A) SVOD premium global** (Netflix, Disney+, Prime Video, HBO Max, Paramount+, Apple TV+). Estreito. Leva a: oligopólio endurecendo, Netflix líder folgada, fosso profundo.
+- **(B) Mercado de atenção**: todo vídeo em tela, incluindo YouTube, TikTok e games. Leva a: mercado fragmentando, Netflix com ~8% do tempo de TV, papel de nicho premium.
+- **(C) Bolso do consumidor + pool de publicidade em vídeo** (~US$ 650 bi endereçáveis pela própria narrativa da Netflix). Leva a: pista longa de crescimento, share baixo.
+- ➡️ **Minha recomendação: definir pelo pool de LUCRO, não pelo de atenção nem pelo de receita.** É a
+  jogada Marcellus e é original: "o mercado de atenção é enorme e não tem dono; o mercado de lucro do
+  vídeo premium é pequeno e tem um dono só". Usa-se (B) como teste de realidade competitiva dentro
+  da seção 4. **Risco:** o avaliador pode ler como estreitamento conveniente do mercado — por isso
+  a definição precisa ser declarada e justificada no primeiro parágrafo, não escondida.
+
+### Bifurcação 2 — A estrutura está endurecendo ou ainda é contestável?
+- **(A) Endurecendo:** consolidação (Paramount+WBD), saída de subescala, disciplina de preço generalizada, bundles. Fosso setorial crescente.
+- **(B) Não:** a participação da Netflix no tempo de TV **caiu** (~9,0% no 1T26 → 7,9% em jun/26 — *confirmar metodologia, ver §7*); o YouTube cresce; Amazon, Apple e Google são concorrentes financeiramente indiferentes ao P&L de streaming e por isso nunca saem. Pelo teste de Greenwald, participação instável = não há fosso setorial.
+- ➡️ **Minha recomendação: os dois andares (tese da seção 1).** Endurecendo no vídeo premium,
+  contestado na atenção. É a única leitura que reconcilia os dados sem escolher os que convêm, e
+  é mais difícil de atacar numa arguição. **Risco:** exige escrita precisa para não soar ambígua —
+  a frase de fechamento de cada seção resolve isso.
+
+### Bifurcação 3 — O lucro reportado do setor é real?
+- **(A) É:** razão caixa de conteúdo / amortização da Netflix ~1,1x em 2026E, FCF projetado ~US$ 12,5 bi, US$ 4,7 bi de recompra só no 2T26. Lucro vira caixa.
+- **(B) Cuidado:** razão >1,0 significa que a empresa gasta mais caixa do que reconhece como despesa; o ativo de conteúdo continua crescendo e a DRE subestima o custo de reposição. Nos rivais, a prova está nos *impairments* bilionários de acervo.
+- ➡️ **Minha recomendação: usar as duas — é a seção de qualidade contábil.** Netflix passa no teste,
+  o setor em geral não. Isso é o filtro 1 da Marcellus aplicado a um setor inteiro e **nenhum
+  concorrente do desafio vai escrever essa seção**. **Risco:** é a seção mais técnica; se mal escrita,
+  vira jargão. Tem de caber em 0,7 página com um gráfico e uma conclusão em linguagem simples.
+
+### Bifurcação 4 — Esporte ao vivo: barreira nova ou transferência de valor?
+- **(A) Barreira:** é o último conteúdo não replicável. Dados da própria Netflix: ao vivo será ~5% do gasto em conteúdo em 2026 e só ~1% das horas vistas, **mas respondeu por 6 dos 10 maiores dias de adesão dos últimos 5 anos**. Aquisição de cliente baratíssima.
+- **(B) Armadilha:** direitos esportivos historicamente transferem margem do distribuidor para a liga, que é monopólio natural. Foi o que corroeu a TV a cabo e a ESPN. Quem persegue esporte entrega o lucro ao fornecedor.
+- ➡️ **Minha recomendação: (A) com a ressalva de (B) explicitada.** O par 5%-do-gasto / 6-dos-10-dias
+  é um dos números mais fortes do relatório inteiro e é pouco citado. Mas o argumento só fica
+  Marcellus se dissermos qual seria o sinal de que virou (B): renovações a múltiplos crescentes sem
+  ganho proporcional de adesão.
+
+### Bifurcação 5 — Publicidade: segundo motor ou diluição?
+- **(A) Motor:** ~US$ 3 bi em 2026, praticamente dobrando; verba migrando de TV linear para CTV; inventário premium e ferramentas de ads próprias.
+- **(B) Diluição:** o plano com anúncios reduz o ARPU médio e joga a Netflix num mercado (publicidade digital em vídeo) onde Google, Amazon e Meta têm 20 anos de vantagem em adtech e dados. É entrar num setor em que ela **não** tem fosso.
+- ➡️ **Minha recomendação: (B) como alerta setorial, (A) como fato.** Na Etapa 1 a publicidade
+  interessa como *mudança de estrutura do setor* (o pool de receita do vídeo se funde ao pool de
+  publicidade, e aí o concorrente passa a ser o YouTube em definitivo), não como linha de receita.
+  Isso amarra a seção 4. O julgamento sobre ARPU fica para a Etapa 2.
+
+### Bifurcação 6 — O que significa ter perdido a Warner Bros.?
+- **(A) Bala desviada:** saiu com US$ 2,8 bi, evitou integrar ativo de cabo em declínio e um litígio antitruste. Disciplina de alocação de capital — o filtro 3 da Marcellus, com sinal positivo.
+- **(B) Derrota estratégica:** a Netflix tentou comprar escala em propriedade intelectual e perdeu; o nº 2 agora é grande de verdade (HBO, DC, acervo Warner, CBS, Paramount+); a tentativa revela que a produção orgânica não era considerada suficiente.
+- **(C) Teto regulatório revelado:** o DOJ investigou explicitamente poder de mercado **sobre criadores**. Ou seja, a Netflix está proibida de consolidar — o setor vai se consolidar **ao redor dela**, não através dela.
+- ➡️ **Minha recomendação: (C) como argumento principal, (A) como nota de alocação de capital.**
+  (C) é o insight mais original disponível e ainda não tem consenso de mercado formado. E tem um
+  efeito bonito: a acusação do DOJ é, na prática, **a validação do fosso feita por um terceiro
+  hostil**. **Risco:** depende de fatos ainda em movimento — o fechamento Paramount–WBD pode sair
+  entre agora e dezembro. Por isso todo parágrafo sobre isso leva data explícita.
+
+### Bifurcação 7 — Brasil/LATAM: pista de crescimento ou ARPU estruturalmente baixo?
+- **(A) Subpenetrado, cresce**, receita LATAM ultrapassou US$ 1,5 bi/trimestre no 2T26.
+- **(B) ARPU baixo e exposto a câmbio**, alta sensibilidade a preço, concorrência local (Globoplay), pirataria. Crescimento futuro vem de **preço em mercado maduro**, não de penetração em emergente.
+- ➡️ **Minha recomendação: (B), com Brasil como estudo de caso de um parágrafo**, não como seção.
+  A banca é brasileira e vai gostar do recorte local, mas o argumento honesto é que o lucro
+  incremental do setor vem de preço nos mercados ricos. Dizer isso com dado é mais persuasivo do
+  que puxar sardinha para o mercado local. **Risco:** contrariar a expectativa da banca — mitigado
+  se o parágrafo mostrar que entendemos o mercado local em profundidade.
+
+---
+
+## 6. Cronograma de 48 horas
+
+| Quando | O quê | Quem |
 |---|---|---|
-| Núcleo | Vídeo sob demanda por assinatura (SVOD) + AVOD/FAST, global, ex-China | É onde a Netflix compete diretamente por assinantes e preço |
-| Ampliado | Todo o entretenimento em vídeo na TV e telas: TV aberta, TV paga linear, streaming, YouTube, vídeo social curto | A Netflix mesma define seu concorrente como "tempo de tela" (Nielsen The Gauge) |
-| Monetização | Gasto do consumidor com vídeo + publicidade em vídeo/CTV | Necessário para o TAM: a Netflix cita ~US$ 650 bi de receita endereçável e afirma capturar ~6% dela (conferir na carta aos acionistas mais recente) |
+| **16/09 tarde** | Vocês: decidir as 7 bifurcações, colar as cartas da Marcellus, definir grupo/idioma. Eu: puxar 10-K da Netflix e dos pares, Nielsen Gauge, série de preços, montar `empresa/fontes.md` | ambos |
+| **16/09 noite** | Eu: montar as 5 bases de dados dos gráficos em `etapa1_setor/dados/` e as notas de pesquisa por seção | eu |
+| **17/09 manhã** | Eu: rascunho completo das 5 páginas. Vocês: revisar argumento por argumento — não estilo, argumento | ambos |
+| **17/09 tarde** | Gráficos finais; corte para 5 páginas; conferência de todas as fontes com data de acesso | ambos |
+| **17/09 noite** | Leitura em voz alta (teste de coerência); versão candidata fechada | todos |
+| **18/09 manhã** | Formatação A4/Arial 12, geração do PDF, conferência de limite de páginas | responsável pelo envio |
+| **18/09 até 18h** | **Envio pela área logada.** Não usar as 6 horas finais de folga | responsável pelo envio |
 
-Recomendação: adotar o núcleo como mercado relevante formal, mas dimensionar e discutir a
-competição no ampliado. Isso evita o erro de tratar só Disney+/Max como concorrentes e ignorar
-YouTube, que tem mais tempo de TV nos EUA do que a Netflix.
-
-Geografia: global ex-China, com dois recortes de apoio: EUA/Canadá (mercado maduro, referência
-de "equilíbrio em país desenvolvido") e Brasil/LATAM (onde a banca está, onde o grupo tem dados
-locais e onde a penetração ainda cresce).
-
-### 1.2 Hipótese-guia da síntese (a ser validada pela pesquisa)
-
-"O setor saiu de uma fase de guerra por assinantes (2019–2022, capital abundante, preços
-subsidiados) para uma fase de consolidação e disciplina de preço (2023 em diante), na qual
-escala em conteúdo, distribuição global e dados viraram barreiras. Quem tem escala repassa
-preço e lucra; quem não tem, se funde, licencia ou vira agregador. A fronteira competitiva
-que resta é o tempo de tela contra YouTube/vídeo social, não contra outros SVODs."
-
-Se os dados não sustentarem isso, a hipótese muda. Mas ter uma hipótese desde o D0 evita
-pesquisa dispersa.
+Regra de corte: se às 17/09 à noite faltar dado para um gráfico, **o gráfico sai e o argumento fica
+em texto com o número que já temos**. Não atrasamos por gráfico.
 
 ---
 
-## 2. Checklist I traduzido em perguntas, dados e fontes
+## 7. Fatos a confirmar antes de irem para o PDF
 
-Para cada item: o que responder, qual número sustenta, onde buscar. Marcação:
-- 🟢 eu consigo buscar sozinho (público na web)
-- 🟡 público, mas melhor vocês baixarem e me enviarem o PDF/planilha (documentos longos, gráficos, tabelas)
-- 🔴 pago ou restrito: precisa de acesso de vocês (universidade, corretora, terminal)
+Marcados no pré-relatório com ⚠️. Nenhum entra no texto sem checagem:
+1. Série do Nielsen Gauge — "The Gauge" e "Media Distributor Gauge" têm metodologias diferentes
+   (a segunda consolida por distribuidor); os números de 9,0% e 7,9% podem não ser comparáveis.
+   Há ainda indício de mudança/descontinuação do relatório em ago/2026. **Usar uma única série coerente.**
+2. Status do fechamento Paramount–WBD na data do envio (18/09) — pode mudar até o último dia.
+3. Se a narrativa do TAM de ~US$ 650 bi ainda consta das cartas recentes da Netflix ou foi abandonada.
+4. Números de gasto em conteúdo dos rivais: usar caixa (fluxo de caixa) e não despesa da DRE, e dizer qual.
+5. Tramitação da Condecine sobre streaming e da cota de conteúdo nacional no Brasil em set/2026.
 
-### A. Mercado relevante e tamanho (TAM)
+## 8. Armadilhas (mantidas da v1, ainda válidas)
 
-| Pergunta | Dado que sustenta | Fonte | Acesso |
-|---|---|---|---|
-| Qual o mercado relevante? | Definição em camadas (1.1) + como a própria Netflix descreve sua competição | 10-K 2025, seção "Competition"; cartas trimestrais aos acionistas | 🟢🟡 |
-| Tamanho em receita | Receita global de SVOD, AVOD, TV paga, publicidade em vídeo | PwC Global Entertainment & Media Outlook (resumo público); Ampere Analysis; Omdia; Digital TV Research (press releases); Statista | 🟢 resumos / 🔴 relatórios |
-| Tamanho em tempo | Share de tempo de TV: streaming vs. cabo vs. broadcast | Nielsen The Gauge (mensal, EUA, público) | 🟢 |
-| TAM segundo a empresa | US$ 650 bi endereçável, % capturado | Carta aos acionistas 4T24 / 4T25 | 🟢 |
-| Tamanho no Brasil | Receita de streaming, assinantes, domicílios com internet/TV conectada | Ancine/OCA; Kantar IBOPE Inside Video; Anatel (TV paga); IBGE PNAD TIC; Comscore Brasil | 🟢🟡 |
-
-### B. Crescimento do mercado e por quê
-
-| Pergunta | Dado | Fonte | Acesso |
-|---|---|---|---|
-| Crescendo, estável ou caindo? | CAGR de receita SVOD 2019–2025 e projeção 2026–2030; queda de TV paga (cord-cutting) | Ampere, Omdia, Digital TV Research; para TV paga EUA: MoffettNathanson (🔴), relatórios da Comcast/Charter (🟢) | misto |
-| Drivers | Penetração de banda larga e smart TV; migração de verba publicitária linear → CTV; preços | GroupM "This Year Next Year"; Magna; eMarketer (resumos públicos); IBGE/Anatel para Brasil | 🟢 |
-| Vetores de crescimento novos | Publicidade (tier com anúncios), eventos ao vivo/esporte, games, compartilhamento pago | Cartas da Netflix; Antenna (🔴); press releases de upfront | 🟢🔴 |
-
-### C. Estrutura do mercado
-
-| Pergunta | Dado | Fonte | Acesso |
-|---|---|---|---|
-| Fragmentado ou concentrado? | Share de assinantes/receita dos top 5 SVODs (global, EUA, Brasil); índice HHI calculado por nós | JustWatch (share de interesse por país, público); Ampere; Antenna; Kantar; Parrot Analytics (demanda) | 🟢🔴 |
-| Barreiras à entrada | Gasto em conteúdo dos players (cash content spend); custo de aquisição de cliente; escala tecnológica (Open Connect); catálogo | 10-Ks de Netflix, Disney, WBD, Paramount; Ampere content spend (press); Sandvine Global Internet Phenomena (share de tráfego) | 🟢🟡 |
-| Principais empresas | Netflix, YouTube (Alphabet), Disney+/Hulu, Amazon Prime Video, HBO Max (WBD), Paramount+, Peacock (Comcast), Apple TV+; no Brasil somar Globoplay | 10-Ks e resultados trimestrais de cada uma; Alphabet reporta receita de YouTube ads | 🟡 |
-| Penetrado ou subpenetrado? | Assinaturas por domicílio de banda larga por região; Netflix: penetração de domicílios por país | Netflix (última divulgação de assinantes: 301,6 mi em 4T24; depois parou de reportar); Ampere; Digital TV Research | 🟢🔴 |
-| Conduta: guerra de preço ou repasse? | Histórico de preços da Netflix por país e plano (EUA, Brasil) deflacionado pelo CPI/IPCA; reajustes de Disney+, Max, Spotify como comparação | Centro de ajuda da Netflix, Wayback Machine, notícias (Variety, THR); IPCA/CPI para deflacionar | 🟢 |
-| Estrutura se mantém? Equilíbrio em mercado maduro | Consolidação: Disney compra Hulu; Paramount+Skydance; Netflix anuncia compra da Warner Bros. (dez/2025) e disputa com Paramount – **confirmar status atual da transação e da revisão antitruste**; bundles (Disney+Hulu+Max); licenciamento cruzado voltando | Press releases e filings das empresas (8-K, proxy); noticiário; DOJ/FTC | 🟢🟡 |
-| Diferenciação de produto | Conteúdo original exclusivo; % do top 10 que é original; churn comparado (Netflix tem o menor do setor) | Netflix "What We Watched" (engajamento semestral, 🟢); Antenna churn (🔴, muito citado na imprensa 🟢); Nielsen top 10 streaming | 🟢🔴 |
-
-### D. Cadeia de valor
-
-| Pergunta | Dado | Fonte | Acesso |
-|---|---|---|---|
-| Fornecedores relevantes | Estúdios/produtoras, talento (sindicatos: greves 2023 SAG-AFTRA/WGA), ligas esportivas (NFL, WWE, FIFA), infra de nuvem/CDN, fabricantes de TV e sistemas operacionais (Roku, Amazon Fire, Google TV, Samsung), operadoras (bundles) | 10-K Netflix (obrigações de conteúdo, "content obligations"); contratos esportivos anunciados; Roku 10-K | 🟢🟡 |
-| Clientes | Domicílios (assinatura) + anunciantes (tier com anúncios) | Netflix upfront; eMarketer CTV | 🟢 |
-| Estrutura dos outros elos | Estúdios concentrados (big 5); plataformas de TV conectada concentradas (Roku/Amazon/Google/Samsung); ligas esportivas são monopólios naturais | Relatórios das empresas; Ofcom Media Nations (UK) para plataformas | 🟢 |
-| Quem fica com o lucro? | Margem operacional Netflix (~29–30% em 2025) vs. estúdios tradicionais vs. segmento DTC da Disney/WBD vs. Roku; evolução 2019–2025 | 10-Ks; montar tabela comparativa | 🟡 |
-| Perfil do consumidor | Idade, renda, número de serviços por domicílio, tempo diário de vídeo | Deloitte Digital Media Trends (🟢 público); Hub Entertainment Research; Kantar; Datafolha/Ibope para Brasil | 🟢🔴 |
-| Substitutos diretos | YouTube, TikTok/vídeo curto, games, TV aberta, pirataria | Nielsen Gauge; Sandvine; Ancine sobre pirataria; MUSO (pirataria, 🟢 resumos) | 🟢 |
-| Relevância na renda | Preço do plano / renda média domiciliar: EUA (~US$ 8–25) vs. Brasil (R$ por plano) vs. renda domiciliar IBGE; comparar com TV paga histórica | Preços Netflix; IBGE PNAD; Census Bureau | 🟢 |
-
-### E. Regulação
-
-| Tema | O que levantar | Fonte | Acesso |
-|---|---|---|---|
-| Cotas e investimento obrigatório | UE (AVMSD: 30% de obras europeias; obrigações de investimento na França, Itália, Espanha); Coreia; Canadá (Online Streaming Act) | Textos legais, European Audiovisual Observatory (🟢) | 🟢 |
-| Brasil | Regulação do VOD: projetos de lei sobre Condecine sobre streaming e cota de conteúdo nacional – **verificar status em set/2026**; Ancine | Câmara/Senado, Ancine, notícias | 🟢🟡 |
-| Antitruste | Revisão da compra da Warner Bros. (DOJ, UE); DMA na UE | Filings, noticiário | 🟢 |
-| Taxas de rede / neutralidade | Disputa Coreia (SK Broadband), debate "fair share" na UE | Notícias, consultas públicas UE | 🟢 |
-| Impostos digitais | Taxas sobre serviços digitais (Europa, Canadá, Brasil via CIDE/Condecine) | Notícias | 🟢 |
-| Impacto na oferta/preço | Como cada regra afeta custo e capacidade de precificar; a Netflix repassou? | Análise nossa | – |
-
----
-
-## 3. Gráficos e tabelas propostos (escolher 4 a 5, o limite é 5 páginas)
-
-1. **Share de tempo de TV nos EUA** (Nielsen Gauge): streaming vs. cabo vs. broadcast, 2021–2026, com YouTube e Netflix destacados. Mostra o mercado ampliado e quem é o concorrente real.
-2. **Receita global de SVOD vs. TV paga**, 2018–2030E. Mostra crescimento e substituição.
-3. **Gasto em conteúdo por player**, 2019–2025 (barras). Mostra barreira à entrada e o fim da "guerra".
-4. **Preço da Netflix (plano padrão) deflacionado**, EUA e Brasil, 2011–2026, com churn ou assinantes no eixo secundário. Mostra pricing power: é a prova quantitativa que as orientações pedem.
-5. **Margem operacional: Netflix vs. estúdios/DTC concorrentes**, 2019–2025. Mostra quem captura o lucro da cadeia.
-6. (opcional) **Concentração de mercado** (HHI ou share top 5) em EUA e Brasil.
-
----
-
-## 4. Estrutura do texto (5 páginas) e orçamento de espaço
-
-| Seção | Pág. | Conteúdo | Gráfico |
-|---|---|---|---|
-| 1. Mercado relevante e tamanho | 0,75 | Definição em camadas, TAM em receita e tempo, Brasil como recorte | 1 |
-| 2. Dinâmica de crescimento | 0,75 | CAGR, drivers (cord-cutting, CTV ads, penetração), novos vetores (ads, esporte) | 2 |
-| 3. Estrutura competitiva | 1,25 | Concentração, barreiras, fim da guerra por assinantes, consolidação (Warner), diferenciação | 3 e 4 |
-| 4. Cadeia de valor | 1,0 | Elos, quem captura lucro, consumidor, substitutos, peso na renda | 5 |
-| 5. Regulação | 0,5 | Cotas/investimento, Brasil, antitruste; impacto em preço/oferta | – |
-| 6. Síntese: o que o setor implica para a Netflix | 0,75 | Fecha a hipótese-guia e planta as perguntas da Etapa 2 | – |
-
-Páginas: 5,0. Referências vão no rodapé ou em notas compactas dentro do limite. Anexos não contam.
-
----
-
-## 5. Cronograma (D0 = 12/09, entrega 18/09)
-
-| Dia | Data | Atividade | Responsável sugerido |
-|---|---|---|---|
-| D0 | 12/09 sex | Fechar enquadramento (seção 1), montar `empresa/fontes.md`, baixar 10-K e cartas; vocês me enviam o lote prioritário (seção 6) | todos |
-| D1 | 13/09 sáb | Blocos A e B (tamanho, crescimento). Eu consolido dados públicos; vocês extraem tabelas dos PDFs | P1: A/B; P2: C; P3: D/E |
-| D2 | 14/09 dom | Bloco C (estrutura). Série de preços deflacionada; tabela de content spend; status da Warner | idem |
-| D3 | 15/09 seg | Blocos D e E (cadeia, regulação). Tabela de margens da cadeia | idem |
-| D4 | 16/09 ter | Gráficos finais + rascunho completo do texto (eu escrevo a partir das notas, vocês revisam argumento por argumento) | eu + revisão |
-| D5 | 17/09 qua | Corte para 5 páginas, checagem de fontes, formatação A4/Arial 12, leitura em voz alta para coerência | todos |
-| D6 | 18/09 qui | PDF final até o meio-dia; envio pela área logada com folga | responsável pelo envio |
-
-Buffer: qualquer bloco que atrase come o D5, não o D6.
-
----
-
-## 6. Lista de dados para vocês me enviarem
-
-Coloquem os arquivos em `etapa1_setor/dados/` (planilhas, CSVs) ou `etapa1_setor/pesquisa/` (PDFs, notas). Eu leio direto do disco.
-
-### Prioridade 1 (até D1): sem isso o trabalho não anda
-1. **Netflix 10-K do ano fiscal 2025** (PDF) e **cartas aos acionistas** dos 4T24, 1T25, 2T25, 3T25, 4T25 e 1T26/2T26 (PDF). Fonte: ir.netflix.net. Peças-chave: seção Competition, tabela de receita por região, obrigações de conteúdo, discussão do TAM de US$ 650 bi, métricas do tier com anúncios.
-2. **Nielsen The Gauge**: capturas ou tabelas mensais de share de TV (EUA) desde 2021. Fonte: nielsen.com/insights (gratuito, mas em imagens).
-3. **Histórico de preços da Netflix** no Brasil e nos EUA por plano, com datas dos reajustes. Vocês montam a planilha; eu cruzo com IPCA/CPI.
-4. **Qualquer relatório setorial** ao qual a universidade dê acesso: Ampere, Omdia, Statista, PwC Outlook completo, Euromonitor. Verificar biblioteca digital da faculdade e portal Capes.
-
-### Prioridade 2 (até D2): fortalecem estrutura e cadeia
-5. **10-K / resultados** de Disney (segmento Entertainment/DTC), Warner Bros. Discovery, Paramount, Comcast (Peacock), Roku; Alphabet (linha YouTube ads). Só as páginas de segmento.
-6. **Relatórios de corretora (sell-side)** sobre Netflix ou sobre o setor de streaming: Morgan Stanley, JPMorgan, Goldman, BofA, UBS, MoffettNathanson, Bernstein. Acesso via conta em corretora, professor, ou grupo de mercado da faculdade. Uma iniciação de cobertura recente vale por dez notícias.
-7. **Antenna** (churn e assinantes nos EUA) e **JustWatch** (share por país): o que houver de público em press releases e artigos.
-8. **Dados Brasil**: Ancine/OCA sobre VOD; Kantar IBOPE Inside Video; Anatel TV paga (série de assinantes); PNAD TIC domicílios com internet; Comscore Brasil. Todos públicos, mas dispersos.
-9. **Deloitte Digital Media Trends** (edição 2025 ou 2026, PDF gratuito).
-
-### Prioridade 3 (até D3): regulação e detalhes
-10. **Status da compra da Warner Bros. pela Netflix**: últimos 8-K, decisão dos acionistas da WBD, posição do DOJ e da Comissão Europeia. Eu consigo buscar, mas se tiverem notas de corretora sobre a transação, enviem.
-11. **Status da regulação de VOD no Brasil** (Condecine sobre streaming, cota de conteúdo nacional): texto do projeto e situação de tramitação.
-12. **Terminal Bloomberg / Refinitiv / Economatica** se a faculdade tiver: exportar para NFLX e pares (DIS, WBD, PARA, CMCSA, ROKU, GOOGL) receita, EBIT, margem, capex de conteúdo, 2015–2025, e consenso. Isso já serve para a Etapa 2.
-
-### O que eu busco sozinho (não precisam enviar)
-- SEC EDGAR (filings em HTML), press releases, Nielsen releases, European Audiovisual Observatory, textos legais, IBGE/BCB/FRED para deflatores, notícias de Variety/THR/Reuters, Wayback Machine para preços antigos.
-
----
-
-## 7. Armadilhas a evitar
-
-- **Tratar Netflix como setor "de tecnologia"**: é uma empresa de mídia com distribuição digital; a comparação relevante é com estúdios e TV, não com SaaS.
-- **Ignorar YouTube**: nos EUA, o YouTube tem mais tempo de TV do que a Netflix. Omitir isso derruba a credibilidade.
-- **Usar assinantes como métrica central**: a Netflix parou de divulgar em 2025 e migrou o discurso para receita, engajamento e margem. O trabalho deve refletir essa mudança.
-- **Descrever sem concluir**: cada seção fecha com uma frase do tipo "isso implica que...".
-- **Perder o limite de páginas com gráficos grandes**: gráficos em meia coluna, fonte 12 obrigatória no texto.
-- **Fonte sem data de acesso**: registrar tudo em `empresa/fontes.md` no momento em que usar.
-- **Contato com RI da Netflix**: proibido. Só via reuniões coletivas do Opportunity.
-
----
-
-## 8. Ponte para a Etapa 2 (não entra no texto, guia a síntese)
-
-Perguntas que a análise setorial deve deixar armadas:
-- Se o setor consolida, a Netflix é compradora (Warner) ou fica orgânica? Qual o risco de execução?
-- O tier com anúncios muda o ARPU ou canibaliza?
-- Esporte ao vivo é barreira nova ou inflação de custo?
-- Quanto do crescimento futuro vem de preço (mercados maduros) vs. penetração (Brasil, Índia, sudeste asiático)?
-- O que o mercado precifica hoje sobre tudo isso?
+- Tratar a Netflix como empresa "de tecnologia". É mídia com distribuição digital; o comparável é estúdio e TV.
+- Ignorar o YouTube. Nos EUA ele tem mais tempo de TV do que a Netflix; omitir derruba a credibilidade.
+- Usar assinantes como métrica central. A Netflix parou de divulgar e migrou o discurso para receita,
+  margem e engajamento — e em 2027 reduz até a divulgação de horas vistas. O relatório tem de refletir isso.
+- Descrever sem concluir. Toda seção fecha com "isso implica que…".
+- Fonte sem data de acesso.
+- Contato com RI da Netflix: proibido (3.2.2). Só nas reuniões coletivas do Opportunity.
