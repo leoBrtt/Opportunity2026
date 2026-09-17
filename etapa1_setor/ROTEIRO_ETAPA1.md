@@ -1,35 +1,34 @@
 # ROTEIRO – ETAPA 1: ANÁLISE SETORIAL (NETFLIX), MÉTODO MARCELLUS
 
-Versão 2 — reescrita em 16/09/2026. A versão 1 (12/09) está no histórico do git.
+Versão 3 — reescrita em 16/09/2026, noite. As versões 1 (12/09) e 2 (16/09, tarde) estão no git.
 Método adotado: ver `Marcellus.md`. Entrega: PDF ≤5 páginas, A4, Arial/Times 12, **18/09/2026 23h59**.
 
 ---
 
-## ⚠️ 0. Duas coisas mudaram desde a versão 1
+## ⚠️ 0. O que mudou na v3: sem Bloomberg Terminal
 
-**(a) O prazo. Restam ~2,5 dias, não 6.** O cronograma antigo previa D4 = hoje com a pesquisa
-toda pronta; as pastas `pesquisa/` e `dados/` estão vazias. O plano abaixo é de 48h, não de 6 dias.
-Consequência prática: a lista de dados que peço a vocês caiu de 12 itens para **4**, e eu assumo
-o resto. Não dá para esperar acesso de biblioteca ou relatório de corretora chegar a tempo.
+O grupo não tem acesso ao Terminal. A v2 apoiava três coisas nele: consenso numérico de analistas
+(`BEst`), export de segmentos (`FA`) e estimativas de assinantes por player (Bloomberg Intelligence).
+**Testei as alternativas públicas hoje à noite, antes de reescrever este plano** — o que segue é o que
+de fato funcionou, não o que eu esperava que funcionasse.
 
-**(b) A premissa central da versão 1 estava factualmente errada.** O roteiro antigo dizia
-"Netflix anuncia compra da Warner Bros. (dez/2025)" e tratava a Netflix como consolidadora.
-O que de fato aconteceu (verificado hoje, fontes em `empresa/fontes.md`):
+**O que ficou igual ou melhor:** todo o financeiro das empresas sai da SEC, de graça e em formato
+legível por máquina. Confirmei três rotas funcionando:
 
-| Data | Fato |
+| Rota testada | Resultado |
 |---|---|
-| 05/12/2025 | Conselho da WBD aceita proposta da Netflix (~US$ 83 bi) |
-| 08/12/2025 | Paramount Skydance (David Ellison) lança oferta hostil, US$ 30/ação, tudo em dinheiro |
-| 22/01/2026 | DOJ emite *second request* sobre Netflix–WBD; Netflix converte oferta para US$ 27,75 all-cash |
-| fev/2026 | DOJ investiga se a Netflix exerce poder anticompetitivo **sobre criadores e produtores** (Clayton §7 / Sherman §2) |
-| 27/02/2026 | **Netflix desiste e embolsa multa de rescisão de US$ 2,8 bi** |
-| 23/04/2026 | Acionistas da WBD aprovam a Paramount (US$ 31/ação); taxa de rescisão regulatória de US$ 7 bi |
-| set–dez/2026 | Fechamento esperado; *ticking fee* de US$ 0,25/ação por trimestre a partir de 30/09/2026 |
+| Carta 2T26 da Netflix (8-K, EDGAR) | ✅ Todos os números ✅ do pré-relatório conferidos contra a fonte primária: receita US$ 12.560 mi, lucro operacional US$ 4.193 mi, margem 33,4%, guidance 2026 de US$ 51,0–51,4 bi e 31,5%, razão conteúdo/amortização ~1,1x, FCF ~US$ 12,5 bi, recompra US$ 4,7 bi, 97 bi de horas (+2%), ao vivo "pouco mais de 5%" do gasto, ads ~US$ 3 bi |
+| API XBRL da SEC (`data.sec.gov`) | ✅ Série histórica padronizada de qualquer empresa, sem parsing de HTML |
+| R-files do EDGAR (`FilingSummary.xml` → `R50.htm`) | ✅ Tabela de segmentos já estruturada. Substitui o export `FA → Segments` do Bloomberg integralmente |
 
-Isso não é um detalhe: **inverte o argumento**. A Netflix não é a consolidadora do setor — ela
-tentou consolidar, foi barrada pelo preço e pelo antitruste, e o nº 2 do setor está sendo montado
-por outro. E o motivo alegado pelo DOJ (poder de compra sobre criadores) é a confissão regulatória
-de que o fosso da Netflix é real. Esse é o melhor material original que temos.
+**A descoberta que muda o trabalho:** a Disney **não** reporta DTC como segmento com resultado
+operacional próprio — o 10-K dá Entertainment / Sports / Experiences, e o número do Disney+ está em
+tabela do MD&A. O mesmo vale em graus diferentes para Comcast (Peacock dentro de Media) e Paramount.
+Ou seja, o G1 exige extração de MD&A empresa por empresa, não só da nota de segmentos. É a parte mais
+custosa do que sobrou, e por isso ela entra primeiro no cronograma.
+
+**O que foi perdido de verdade** está na seção 2.1 abaixo, com a compensação de cada item. Não vou
+fingir que o substituto é equivalente: em dois casos ele é pior, e o relatório vai declarar isso.
 
 ---
 
@@ -50,63 +49,124 @@ em 48h, e é o que a Marcellus faz: a carta começa com a conclusão e o resto �
 
 ---
 
-## 2. Os dados que EU busco sozinho (não gastem tempo com isso)
+## 2. O que EU faço sozinho (rotas verificadas hoje)
 
-Já confirmei acesso e já puxei parte hoje. Tudo com fonte e data de acesso registradas.
+Tudo abaixo é público, alcançável por mim e com fonte citável. Vocês não precisam tocar em nada disto.
 
-- **SEC EDGAR**: 10-K/10-Q/8-K/proxies da Netflix, Disney, WBD, Paramount Skydance, Comcast, Roku, Alphabet.
-- **Cartas trimestrais da Netflix** (ir.netflix.net) — consigo converter PDF em texto e extrair tabelas.
-  Já extraí a do 2T26 (16/07/2026) integralmente.
-- **Nielsen The Gauge** (releases públicos), notícias setoriais (Variety, Deadline, Reuters, CNBC, Bloomberg, Fortune).
-- **Série histórica de preços** da Netflix por país e plano via Wayback Machine + centro de ajuda.
-- **Deflatores**: CPI (FRED/BLS) e IPCA (IBGE/BCB).
-- **Regulação**: textos da AVMSD, European Audiovisual Observatory, Ancine, Anatel, tramitação no Congresso.
-- **Releases públicos** de Ampere, Omdia, Digital TV Research, Antenna, JustWatch, MUSO, Deloitte Digital Media Trends.
-- **Todo o cálculo e os gráficos**: HHI, série de preço deflacionada, tabela de margem por elo da cadeia,
-  ROCE, razão caixa de conteúdo / amortização, participação no tempo de TV.
+| Fonte | O que sai dela | Alimenta |
+|---|---|---|
+| **API XBRL da SEC** (`data.sec.gov/api/xbrl/`) | Receita, lucro operacional, ativos, capital investido — série anual e trimestral padronizada, de todas as 7 empresas | G1, ROIC da Seção 2 |
+| **R-files do EDGAR** (`FilingSummary.xml` → `R*.htm`) | Notas de segmento e de fluxo de caixa já em tabela | G1, G4 |
+| **MD&A dos 10-K/10-Q** | Receita e resultado do DTC de Disney, Peacock e Paramount — o que a nota de segmentos não dá | G1 |
+| **Cartas trimestrais da Netflix** (ir.netflix.net) | Guidance, engajamento, ads, ao vivo, recompras. 2T26 já extraída integralmente | todas as seções |
+| **EDGAR full-text search** (`efts.sec.gov`) | *Impairments* de acervo em WBD e Paramount: valor, data e a frase exata do filing | G4, Seção 3 |
+| **Nielsen** (releases públicos do Gauge) | Tempo de TV por distribuidor nos EUA | G5 |
+| **Wayback Machine** + centro de ajuda da Netflix | Histórico de mensalidade por país e plano, 2011–2026 | G3 |
+| **FRED/BLS** e **IBGE/SIDRA** | CPI e IPCA para deflacionar | G3 |
+| **WebSearch / imprensa setorial** | Variety, Deadline, Reuters, CNBC, Fortune, Bloomberg (notícias abertas) | Seção 4a, consenso narrativo |
+| **EDGAR: proxies e DFAN14A da WBD** | Termos do deal: valor, escopo, break fee, ticking fee | Seção 4a |
+| **AVMSD, European Audiovisual Observatory, Ancine** | Cotas e obrigações de investimento | Seção 5 |
 
-## 3. Os dados que preciso de VOCÊS — só 4 itens
+### 2.1. O que o Bloomberg dava e ninguém mais dá — e o que fazemos no lugar
 
-Prioridade absoluta, hoje (16/09) até o fim do dia. O resto eu abandono conscientemente.
+Quatro perdas reais. Em ordem de gravidade:
 
-| # | O quê | Por que é insubstituível | Prazo |
-|---|---|---|---|
-| **1** | **Decisão sobre as bifurcações da seção 5** (as 7 escolhas argumentativas) | É julgamento de vocês, não dado. Sem isso eu escrevo um relatório em cima do muro, que é o que mais reprova. | hoje, 16/09 |
-| **2** | **Qualquer relatório sell-side ou setorial pago** que vocês consigam em horas (conta em corretora, professor, portal CAPES, biblioteca digital): Morgan Stanley / JPM / Goldman / MoffettNathanson sobre streaming; Ampere ou Omdia completos | É a única coisa que eu genuinamente não alcanço. Uma iniciação de cobertura vale por dez notícias e dá o *consenso* contra o qual vamos divergir. Se não vier até amanhã cedo, eu construo o consenso a partir de manchetes e sigo. | 17/09 manhã |
-| **3** | **Trechos das cartas da Marcellus** que vocês analisaram, colados em `Marcellus.md` seção 6 | Para eu imitar o método real e não a minha memória dele. | hoje, 16/09 |
-| **4** | **Nome do grupo, integrantes e idioma** (PT ou EN) | Vai na capa/cabeçalho e consome página. Recomendo **PT**: a banca é brasileira e a Etapa 4 é no Rio. | hoje, 16/09 |
+**(1) Consenso numérico de analistas para 2027–2028.** Era o item nº 1 da lista anterior, porque
+"divergir do consenso" é exigência das orientações do Opportunity.
+→ **Compensação:** trocamos divergência *numérica* por divergência *de narrativa*. O consenso
+publicado é citável em texto — "a guerra do streaming terminou e a Netflix ganhou" aparece em
+dezenas de matérias de 2026, com autor e data. Divergimos disso, não de uma projeção de EBIT.
+Para 2026 temos o guidance da própria empresa, que é fonte primária e mais forte que consenso.
+**Custo real:** perdemos a frase "o mercado projeta X para 2028, nós projetamos Y". Na Etapa 1, que é
+setorial e não de valuation, isso dói pouco. Na Etapa 2 vai doer — resolver até outubro.
 
-**O que deliberadamente NÃO vamos buscar** (e por que está tudo bem): Kantar IBOPE, Comscore,
-Antenna completo, Bloomberg/Economatica, PNAD TIC detalhada, Euromonitor. São ótimos para a Etapa 2.
-Na Etapa 1, com 5 páginas, cada um desses acrescentaria uma linha e custaria meio dia.
+**(2) Estimativas de assinantes por player (Ampere/Omdia via BI).** Sem isso, o **G2 original**
+(gasto em conteúdo ÷ assinantes) é impossível: a Netflix parou de divulgar assinantes.
+→ **Compensação: mudar a métrica do gráfico**, não estimar assinante no chute. Ver G2 revisado na
+seção 4. Gasto em conteúdo **por dólar de receita** prova a mesma economia de escala e é 100%
+auditável a partir dos filings. **É um substituto honesto, não um inferior.**
 
-**Se vocês tiverem tempo sobrando**, o item de maior retorno é montar a planilha de **histórico de
-preços da Netflix no Brasil por plano com datas** (o site brasileiro e as notícias locais são mais
-fáceis de garimpar em português). Eu cruzo com o IPCA e viro o gráfico de pricing power.
+**(3) Função `WACC`.** O teste de Greenwald pedia ROCE > WACC persistente.
+→ **Compensação:** calculo ROIC dos filings e comparo com um custo de capital **declarado como
+premissa nossa** (ordem de 9%). Na prática o argumento não precisa de precisão: se a Netflix roda ROIC
+de dezenas de por cento e os rivais rodam perto de zero ou negativo, a conclusão não depende do
+segundo decimal do WACC. **Perda pequena.**
+
+**(4) Base rate de mídia 1995–2015 (Seção 6).** O XBRL da SEC só é confiável de ~2009 em diante.
+→ **Compensação:** a Seção 6 passa a usar 3–4 casos com âncoras datadas e citadas (ESPN no pico de
+assinantes vs. hoje, TV a cabo, Blockbuster) em vez de uma série calculada de retorno excedente.
+**É a maior perda de rigor do relatório inteiro.** Mitigação: a Seção 6 tem 0,3 página e é a síntese —
+ela pode viver de âncoras bem escolhidas. Mas não vamos escrever "N anos" com falsa precisão.
 
 ---
 
-## 4. Estrutura do relatório (5 páginas) — arquitetura Marcellus
+## 3. O que preciso de VOCÊS — agora são 3 itens, e nenhum é dado
+
+Boa notícia da mudança de plano: **a lista para vocês encurtou.** Como não há Terminal para operar,
+sobra só o que é julgamento de vocês — que é justamente o que eu não posso substituir.
+
+| # | O quê | Por que é insubstituível | Prazo |
+|---|---|---|---|
+| **1** | **Decisão sobre as 7 bifurcações da seção 5** | É julgamento, não dado. Sem isso eu escrevo um relatório em cima do muro, que é o que mais reprova em "persuasão" e "coerência" | hoje, 16/09 |
+| **2** | **Nome do grupo, integrantes e idioma** (PT ou EN) | Vai na capa e consome página. Recomendo **PT**: banca brasileira, Etapa 4 no Rio | hoje, 16/09 |
+| **3** | **Trechos das cartas da Marcellus** colados em `Marcellus.md` seção 6 | Para eu imitar o método real e não a minha memória dele | hoje, 16/09 |
+
+**Item opcional de alto retorno**, se sobrar tempo de alguém: **histórico de mensalidade da Netflix no
+Brasil por plano, com datas**. O site brasileiro e a imprensa local são mais fáceis de garimpar em
+português do que via Wayback em inglês, e isso alimenta o G3 — que na v3 passou a ser o gráfico mais
+importante do relatório (ver seção 4). Se ninguém puder, eu faço via Wayback, só demora mais.
+
+**O que não peço mais:** relatório sell-side pago. Sem conta em corretora e sem Terminal, a chance de
+conseguir em 36h é baixa o suficiente para não valer o custo de oportunidade. Assumimos a perda (1)
+da seção 2.1 e seguimos.
+
+---
+
+## 4. Estrutura do relatório (5 páginas) e os gráficos revisados
+
+A arquitetura das seções **não mudou** — a tese sobrevive intacta à perda do Bloomberg, porque ela
+sempre se apoiou em filings e não em consenso. Mudou a prioridade dos gráficos.
 
 | # | Seção | Pág. | Argumento em uma frase | Gráfico |
 |---|---|---|---|---|
-| — | **Abertura** | 0,3 | Um número que contradiz o consenso: o streaming venceu a TV linear, mas a Netflix não venceu o streaming — e ainda assim é a única que lucra. | — |
-| 1 | **Onde está o pool de lucro** | 1,0 | Mapeamos a cadeia por margem, não por receita: o lucro do vídeo premium global está concentrado em um player só. | G1 |
-| 2 | **Por que ele fica lá: a barreira não-óbvia** | 1,1 | Teste de Greenwald (participação estável + ROCE>WACC persistente). A barreira não é catálogo nem tecnologia: é custo fixo de conteúdo diluído por uma base global que ninguém mais tem, e o poder de compra sobre criadores que decorre disso. | G2 + G3 |
-| 3 | **O lucro do setor é caixa?** | 0,7 | **Seção original.** Neste setor, lucro contábil é escolha de política de amortização de conteúdo. Testamos quem converte. | G4 |
-| 4 | **O que quebraria isso: as duas frentes** | 1,2 | (a) teto regulatório à consolidação, revelado pelo episódio WBD; (b) erosão por baixo, na fronteira da atenção (YouTube, criadores, engajamento quase estável). | G5 |
-| 5 | **Regulação e fornecedores** | 0,4 | Aqui a regulação não limita preço — limita consolidação e transfere valor para ligas, sindicatos e cotas locais. | — |
-| 6 | **Síntese: quanto tempo dura** | 0,3 | Base rate da mídia + as 3 perguntas que a Etapa 2 tem de responder. | — |
+| — | **Abertura** | 0,3 | O streaming venceu a TV linear, mas a Netflix não venceu o streaming — e ainda assim é a única que lucra | — |
+| 1 | **Onde está o pool de lucro** | 1,0 | Mapeamos a cadeia por margem, não por receita | G1 |
+| 2 | **Por que ele fica lá: a barreira não-óbvia** | 1,1 | Custo fixo de conteúdo diluído por uma base que ninguém mais tem, e o poder de compra sobre criadores que decorre disso | G2 + G3 |
+| 3 | **O lucro do setor é caixa?** | 0,7 | **Seção original.** Lucro contábil aqui é escolha de política de amortização | G4 |
+| 4 | **O que quebraria isso: as duas frentes** | 1,2 | (a) teto regulatório à consolidação; (b) erosão pela fronteira da atenção | G5 |
+| 5 | **Regulação e fornecedores** | 0,4 | A regulação não limita preço — limita consolidação e transfere valor a quem produz | — |
+| 6 | **Síntese: quanto tempo dura** | 0,3 | Âncoras históricas de mídia + as 3 perguntas da Etapa 2 | — |
 
-Referências em notas de rodapé compactas dentro do limite (anexos não são avaliados).
-**Máximo 5 gráficos**, meia coluna cada. Texto obrigatoriamente fonte 12.
+### Os gráficos, em nova ordem de prioridade
 
-### Os gráficos (fecho a lista quando os dados estiverem prontos)
-- **G1 – Margem operacional por elo da cadeia, 2019–2026E**: Netflix vs. DTC de Disney/WBD/Paramount/Peacock vs. estúdios vs. Roku (CTV) vs. Alphabet/YouTube. *Prova de onde fica o lucro.*
-- **G2 – Gasto em conteúdo (US$ bi) ÷ base de assinantes**: custo de conteúdo por assinante por player. *Prova a economia de escala como barreira.*
-- **G3 – Preço do plano padrão deflacionado**, EUA e Brasil, 2011–2026. *Prova quantitativa de pricing power — é exatamente o exemplo que o Opportunity cita nas orientações.*
-- **G4 – Caixa gasto em conteúdo ÷ amortização de conteúdo**, Netflix vs. pares, com impairments dos rivais marcados. *A seção de qualidade contábil.*
-- **G5 – Nielsen Gauge**: tempo de TV nos EUA por distribuidor, 2021–2026, YouTube vs. Netflix vs. broadcast vs. cabo. *A fronteira da atenção.*
+**G3 — Mensalidade deflacionada, EUA e Brasil, 2011–2026. → PROMOVIDO A GRÁFICO PRINCIPAL.**
+É 100% construível com o que eu alcanço (Wayback + CPI/IPCA), não dependia de Bloomberg em nada, e é
+**exatamente o exemplo que as orientações do Opportunity citam** ("mostrar que foi capaz de recompor
+preços em termos reais"). Com a perda do consenso, é ele que carrega a prova quantitativa de
+*pricing power*. Era o 3º da lista; agora é o 1º.
+
+**G4 — Caixa de conteúdo ÷ amortização, Netflix vs. pares, com impairments marcados.**
+Sai inteiro do fluxo de caixa dos filings. É a seção que nenhum concorrente do desafio vai escrever.
+Prioridade 2.
+
+**G1 — Margem operacional por elo da cadeia, 2022–2026E.**
+Netflix vs. DTC de Disney/WBD/Paramount/Peacock vs. estúdios vs. Roku (CTV) vs. YouTube.
+**Mudança de escopo: 2022–2026, não 2019–2026.** Motivo analítico, não de preguiça — a WBD só existe
+a partir de abr/2022 (fusão Warner+Discovery) e a Paramount Skydance a partir de ago/2025; série que
+começa em 2019 mistura entidades diferentes e é atacável. Prioridade 3 porque é a extração mais cara
+(MD&A empresa por empresa).
+
+**G2 — REVISADO: gasto em conteúdo (caixa, US$ bi) e gasto em conteúdo ÷ receita, por player.**
+A versão antiga (÷ assinantes) morreu com a perda das estimativas de Ampere/Omdia. A nova prova a
+mesma coisa — que o líder compra conteúdo numa escala que os rivais não alcançam e ainda assim gasta
+menos por dólar de receita — e tem a vantagem de ser auditável linha por linha nos filings.
+Prioridade 4 (mesma passada de extração do G4).
+
+**G5 — Nielsen Gauge: tempo de TV nos EUA por distribuidor.**
+Prioridade 5, e é o mais frágil: o conflito metodológico do §7.1 continua aberto. **Se até 17/09 à
+noite eu não tiver uma série coerente, ele sai e o argumento fica em texto com o número datado.**
+
+Máximo 5 gráficos, meia coluna cada. Referências em notas de rodapé compactas. Texto em fonte 12.
 
 ---
 
@@ -179,20 +239,26 @@ Marquei minha recomendação, mas a decisão é do grupo.
 
 ---
 
-## 6. Cronograma de 48 horas
+## 6. Cronograma revisado — 36 horas
+
+Mais apertado que a v2 porque a extração que era export de Excel virou parsing de filing. Compensa
+que não há dependência de terceiro: não espero nada de fora para começar.
 
 | Quando | O quê | Quem |
 |---|---|---|
-| **16/09 tarde** | Vocês: decidir as 7 bifurcações, colar as cartas da Marcellus, definir grupo/idioma. Eu: puxar 10-K da Netflix e dos pares, Nielsen Gauge, série de preços, montar `empresa/fontes.md` | ambos |
-| **16/09 noite** | Eu: montar as 5 bases de dados dos gráficos em `etapa1_setor/dados/` e as notas de pesquisa por seção | eu |
-| **17/09 manhã** | Eu: rascunho completo das 5 páginas. Vocês: revisar argumento por argumento — não estilo, argumento | ambos |
-| **17/09 tarde** | Gráficos finais; corte para 5 páginas; conferência de todas as fontes com data de acesso | ambos |
-| **17/09 noite** | Leitura em voz alta (teste de coerência); versão candidata fechada | todos |
-| **18/09 manhã** | Formatação A4/Arial 12, geração do PDF, conferência de limite de páginas | responsável pelo envio |
+| **16/09 noite** | Vocês: 3 itens da seção 3. Eu: pipeline de extração da SEC (XBRL + R-files) para as 7 empresas; G4 e G2 montados | ambos |
+| **17/09 manhã** | Eu: MD&A das rivais para o G1; série de preços do G3 com CPI/IPCA; Nielsen para o G5 | eu |
+| **17/09 tarde** | Eu: rascunho completo das 5 páginas. Vocês: revisar **argumento por argumento**, não estilo | ambos |
+| **17/09 noite** | Gráficos finais; corte para 5 páginas; conferência de fonte e data de acesso item por item; leitura em voz alta | ambos |
+| **18/09 manhã** | Formatação A4/Arial 12, PDF, conferência do limite de páginas | responsável pelo envio |
 | **18/09 até 18h** | **Envio pela área logada.** Não usar as 6 horas finais de folga | responsável pelo envio |
 
-Regra de corte: se às 17/09 à noite faltar dado para um gráfico, **o gráfico sai e o argumento fica
-em texto com o número que já temos**. Não atrasamos por gráfico.
+**Regras de corte, em ordem de aplicação:**
+1. Se faltar dado para um gráfico às 17/09 à noite, **o gráfico sai** e o argumento fica em texto com
+   o número que já temos. Nunca atrasamos por gráfico.
+2. Ordem de sacrifício se o tempo estourar: G5, depois G2, depois G1. **G3 e G4 não se sacrificam** —
+   são os dois que sustentam a originalidade do relatório.
+3. Nenhum número entra no PDF sem estar em `empresa/fontes.md` com data de acesso.
 
 ---
 
@@ -206,6 +272,14 @@ Marcados no pré-relatório com ⚠️. Nenhum entra no texto sem checagem:
 3. Se a narrativa do TAM de ~US$ 650 bi ainda consta das cartas recentes da Netflix ou foi abandonada.
 4. Números de gasto em conteúdo dos rivais: usar caixa (fluxo de caixa) e não despesa da DRE, e dizer qual.
 5. Tramitação da Condecine sobre streaming e da cota de conteúdo nacional no Brasil em set/2026.
+6. **Consenso de analistas:** não temos fonte numérica auditável. Onde o texto disser "o mercado
+   espera", a frase tem de vir com citação de matéria datada e autor, **nunca** como número de
+   consenso genérico. Sem Bloomberg, inventar precisão aqui é o risco mais fácil de ser pego.
+7. **Margem do DTC das rivais:** confirmar, para cada empresa, se o número usado é resultado
+   operacional de segmento reportado ou linha de MD&A — e dizer qual no rodapé do G1. Disney, Comcast
+   e Paramount divulgam em níveis diferentes, e comparar coisas diferentes derruba o gráfico.
+
+---
 
 ## 8. Armadilhas (mantidas da v1, ainda válidas)
 

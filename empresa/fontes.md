@@ -9,10 +9,10 @@ Toda linha leva **data de acesso**. Nada entra no PDF sem estar aqui.
 
 | # | Documento | Link | Acesso | O que usamos |
 |---|---|---|---|---|
-| A1 | Netflix – Carta aos acionistas 2T26 (16/07/2026) | https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf | 16/09/2026 | Receita, margem, guidance 2026, FCF, razão caixa/amortização de conteúdo, horas vistas, ads, esporte ao vivo, recompras, TF1, criadores |
+| A1 | Netflix – Carta aos acionistas 2T26 (16/07/2026) | https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf | 16/09/2026 ✅✅ | Receita, margem, guidance 2026, FCF, razão caixa/amortização de conteúdo, horas vistas, ads, esporte ao vivo, recompras, TF1, criadores |
 | A2 | Netflix – Carta aos acionistas 1T26 (16/04/2026) | https://ir.netflix.net/files/doc_financials/2026/q1/FINAL-Q1-26-Shareholder-Letter.pdf | 🔲 baixar | Série trimestral, comentário sobre WBD |
 | A3 | Netflix – Carta aos acionistas 4T25 | https://s22.q4cdn.com/959853165/files/doc_financials/2025/q4/FINAL-Q4-25-Shareholder-Letter.pdf | 🔲 baixar | Fechamento de 2025, margem 29,5%, TAM |
-| A4 | Netflix – 8-K 2T26 (EDGAR) | https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm | 16/09/2026 | Versão HTML da A1 |
+| A4 | Netflix – 8-K 2T26 (EDGAR) | https://www.sec.gov/Archives/edgar/data/1065280/000106528026000211/ex991_q226.htm | 16/09/2026 ✅✅ | Versão HTML da A1. **Conferido linha por linha em 16/09 à noite:** receita US$ 12.560 mi, lucro op. US$ 4.193 mi, margem 33,4%, guidance US$ 51,0–51,4 bi / 31,5%, conteúdo÷amortização ~1,1x, FCF ~US$ 12,5 bi, recompra US$ 4,7 bi (autorização US$ 27,1 bi), 97 bi de horas +2%, ao vivo "pouco mais de 5%" do gasto, ads ~US$ 3 bi |
 | A5 | Netflix – 8-K 1T26 (EDGAR) | https://www.sec.gov/Archives/edgar/data/1065280/000106528026000137/ex991_q126.htm | 16/09/2026 | idem |
 | A6 | Netflix – 10-K FY2025 | EDGAR CIK 0001065280 | 🔲 baixar | Seção *Competition*, obrigações de conteúdo, receita por região |
 | A7 | WBD – DFAN14A (material de solicitação de procuração, 2026) | https://www.sec.gov/Archives/edgar/data/1437107/000119312526021283/d50553ddfan14a.htm | 16/09/2026 | Disputa Netflix x Paramount, termos |
@@ -62,6 +62,30 @@ Toda linha leva **data de acesso**. Nada entra no PDF sem estar aqui.
 - *Impairments* de acervo em WBD e Paramount.
 - AVMSD / European Audiovisual Observatory; Ancine; tramitação da Condecine sobre streaming.
 - Deloitte Digital Media Trends (edição mais recente).
+
+
+## F. Rotas de dados públicas (substituem o Bloomberg — testadas em 16/09/2026)
+
+Sem Terminal. Estas três rotas foram verificadas funcionando antes de o plano ser reescrito (v3).
+
+| # | Rota | Endereço | Acesso | O que entrega |
+|---|---|---|---|---|
+| F1 | SEC – API XBRL `companyconcept` / `companyfacts` | `https://data.sec.gov/api/xbrl/` | 16/09/2026 ✅ | Série anual e trimestral padronizada (receita, lucro operacional, ativos). **Limitação confirmada: não traz dados dimensionais**, ou seja, não traz segmentos, e não traz tags customizadas (as de conteúdo da Netflix ficam fora) |
+| F2 | SEC – API `submissions` | `https://data.sec.gov/submissions/CIK##########.json` | 16/09/2026 ✅ | Índice de todos os 10-K/10-Q com data e nº de acesso. Ex.: Disney 10-K FY2025 = `0001744489-25-000155` |
+| F3 | SEC – R-files (`FilingSummary.xml` → `R*.htm`) | `https://www.sec.gov/Archives/edgar/data/<CIK>/<accession>/` | 16/09/2026 ✅ | Notas do filing já em tabela. Ex.: Disney `R50.htm` = "Financial Information by Operating Segments". Substitui o export `FA → Segments` do Bloomberg |
+
+**Achado que afeta o G1:** a Disney reporta os segmentos **Entertainment / Sports / Experiences** —
+o DTC (Disney+/Hulu) **não** é segmento com resultado operacional próprio na nota. O número do DTC
+sai de tabela do MD&A. Vale em graus diferentes para Comcast (Peacock dentro de Media) e Paramount.
+No rodapé do G1 é obrigatório dizer, por empresa, se o número é resultado de segmento reportado ou
+linha de MD&A — comparar níveis diferentes derrubaria o gráfico.
+
+**Requisito técnico:** a SEC exige cabeçalho `User-Agent` identificando o solicitante; sem ele as
+chamadas são bloqueadas.
+
+**Perdas assumidas por não ter Bloomberg** (detalhe e compensação em `ROTEIRO_ETAPA1.md` §2.1):
+consenso numérico de analistas 2027–2028; estimativas de assinantes por player (Ampere/Omdia);
+função `WACC`; série longa 1995–2015 para base rate de mídia.
 
 ---
 

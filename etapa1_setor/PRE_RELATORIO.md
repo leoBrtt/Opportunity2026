@@ -52,6 +52,9 @@ depende da Bifurcação 1): vídeo premium por assinatura e com publicidade, glo
 
 ## Seção 2 — A barreira não-óbvia (1,1 pág.) · Gráficos G2 e G3
 
+> **Nota v3 (16/09, noite):** sem Bloomberg, o **G3 (preço deflacionado) virou o gráfico principal do
+> relatório** e o G2 mudou de métrica. Ver `ROTEIRO_ETAPA1.md` §2.1 e §4.
+
 **Argumento:** a barreira à entrada neste setor não é catálogo, tecnologia nem marca. É **aritmética
 de custo fixo**: conteúdo é custo fixo puro, e o custo por espectador cai com a base. Com uma
 audiência que a própria empresa descreve como "aproximando-se de 1 bilhão de pessoas" ✅, a Netflix
@@ -70,7 +73,7 @@ pedem — "mostrar que foi capaz de recompor preços em termos reais"):
 |---|---|
 | Aumentos de preço em 2026 nos EUA, México e Espanha, com impacto "consistente com aumentos anteriores" | ✅ carta 2T26 |
 | Série de preço do plano padrão EUA e Brasil 2011–2026, deflacionada por CPI e IPCA | 🔲 eu monto |
-| Gasto em conteúdo por player ÷ base de assinantes | 🔲 |
+| Gasto em conteúdo (caixa) por player e gasto em conteúdo ÷ receita | 🔲 eu extraio dos filings (métrica revisada: ÷ assinantes é impossível sem Bloomberg, ver ROTEIRO v3 §2.1) |
 | Amortização de conteúdo crescendo ~10% em 2026 enquanto a receita cresce 13–14% — alavancagem operacional visível | ✅ carta 2T26 |
 
 **O argumento que ninguém mais vai usar:** em fevereiro de 2026 o Departamento de Justiça americano

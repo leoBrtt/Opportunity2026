@@ -47,7 +47,7 @@ Das Inscrições
 
 2.4. Participantes Elegíveis. Todos os competidores devem, obrigatoriamente, estar matriculados em um curso de graduação no momento da inscrição.
 
-2.4.1. Não será permitida a inscrição de competidores nas seguintes condições:
+2.4.1. Não será permitida a inscrição de competidores nas seguintes condições:u estágio ativo no momento das inscrições ou durante o Desafio, ou que tenham mantido contrato de trabalho ou estágio nos últimos 3 (três) meses anteriores à data de encerramento da
 
 (i) Competidores que tenham contrato de trabalho ou estágio ativo no momento das inscrições ou durante o Desafio, ou que tenham mantido contrato de trabalho ou estágio nos últimos 3 (três) meses anteriores à data de encerramento das inscrições, em empresas e/ou cargos cujas atividades estejam relacionadas à análise de empresas, análise de investimentos ou análise de crédito; e/ou
 
